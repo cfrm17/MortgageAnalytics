@@ -6,7 +6,7 @@ The interest rate risk measures depend on the specific characteristics of the in
 
 The various interest rates are modelled using a choice of arbitrage free term structure models. In the current implementation, a Black-Karasinski (BK) short rate model is used. 
 
-There are several alternatives in how one chooses to implement the BK model. Here  a(t) is chosen to be a constant (a(t) = 0.03 for all t). The other parameter (σ(t)) is chosen to be a constant that best matches a vector of yield volatilities.
+There are several alternatives in how one chooses to implement the BK model. Here  a(t) is chosen to be a constant (a(t) = 0.03 for all t). The other parameter (σ(t)) is chosen to be a constant that best matches a vector of yield volatilities. The yield can be computed as https://finpricing.com/lib/FiZeroBond.html.
 
 In order to calibrate σ(t), one need to first derive the volatilities of the yield curve points. We use treasury futures options to derive implied volatilities of futures prices, and then uses these future price volatilities to derive yield volatilities.
 
@@ -35,11 +35,4 @@ The burnout accounts for the observed decrease in sensitivity of a pool to refin
 The seasoning refers to the fact that new pools take a certain amount of time before they assume their long-term prepayment behaviour. The seasonality captures the dependence of annual cyclical patterns. This factor has not been implemented.
 
 
-References:
-
-https://finpricing.com/lib/EqConvertible.html
-
-https://zenodo.org/record/6548953/files/mortgageModel.pdf
-
-https://zenodo.org/record/6548953#.YpDvfKgpDq4
 
